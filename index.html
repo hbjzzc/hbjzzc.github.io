@@ -38,8 +38,15 @@
             </header>
         </div>
     </div>
-    
-  <script> //新增pv后状态发生改变
+
+
+
+    <input type="hidden" id="aMEID" name="aMEID" value="0">
+</body>
+<script type="text/javascript">
+    $('body > *').on('click', function () { });
+
+    //新增pv后状态发生改变
     function AddAmePVStatus(data) {
         var dataJson = JSON.parse(data.Content)
         if (dataJson.status == 0) {
@@ -58,12 +65,7 @@
             jsonpCallback: "AddAmePVStatus" // 指定回调函数
         });
     })
+
 </script>
-    
-
-
-
-    <input type="hidden" id="aMEID" name="aMEID" value="0">
-</body>
 
 </html>
