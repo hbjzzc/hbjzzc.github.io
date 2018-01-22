@@ -38,6 +38,28 @@
             </header>
         </div>
     </div>
+    
+  <script> //新增pv后状态发生改变
+    function AddAmePVStatus(data) {
+        var dataJson = JSON.parse(data.Content)
+        if (dataJson.status == 0) {
+            //新增成功，不做处理
+        }
+    }
+    //新增pv
+    $(function () {
+        var aMEID = $("#aMEID").val();
+        //
+        $.ajax({
+            type: "get",
+            dataType: "jsonp",
+            cache: false,
+            url: "/CCApp/v2/AppMessage/AddAmePV?AMEID=" + aMEID,
+            jsonpCallback: "AddAmePVStatus" // 指定回调函数
+        });
+    })
+</script>
+    
 
 
 
